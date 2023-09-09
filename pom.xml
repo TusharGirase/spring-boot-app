@@ -32,7 +32,36 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	<profiles>
+		<profile>
+			<id>snapshot-profile</id>
+			<properties>
+				<repo-id>snapshot-repo</repo-id>
+				<repo-name>Snapshot repo</repo-name>
+				<repo-url>${nexus.server}/repository/maven-nexus-test</repo-url>
+			</properties>
+		</profile>
+		<profile>
+			<id>release-profile</id>
+			<properties>
+				<repo-id>release-repo</repo-id>
+				<repo-name>release repo</repo-name>
+				<repo-url>${nexus.server}/repository/maven-releases/</repo-url>
+			</properties>
+		</profile>
+	</profiles>
+	<distributionManagement>
+		<repository>
+			<id>${repo-id}</id>
+			<name>${repo-name}</name>
+			<url>${repo-url}</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshot-repo</id>
+			<name>snapshot repo</name>
+			<url>${nexus.server}/repository/maven-nexus-test</url>
+		</snapshotRepository>
+	</distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
