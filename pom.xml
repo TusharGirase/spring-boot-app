@@ -46,7 +46,7 @@
 			<properties>
 				<repo-id>release-repo</repo-id>
 				<repo-name>Release repo</repo-name>
-				<repo-url>${nexus.server}/repository/maven-releases/</repo-url>
+				<repo-url>${nexus.server}/repository/abcl-releases/</repo-url>
 			</properties>
 		</profile>
 	</profiles>
@@ -59,7 +59,7 @@
 		<snapshotRepository>
 			<id>snapshot-repo</id>
 			<name>snapshot repo</name>
-			<url>${nexus.server}/repository/maven-snapshots</url>
+			<url>${nexus.server}/repository/abcl-snapshot</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<build>
