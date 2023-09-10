@@ -1,8 +1,8 @@
-major_version=$2
-nexus_server=$3
-nexus_repo=$4
-artifact_id=$(echo $5 | sed 's/\./\//g')
-echo "$5"
+major_version=$1
+nexus_server=$2
+nexus_repo=$3
+artifact_id=$(echo $4 | sed 's/\./\//g')
+echo "$4"
 echo "${artifact_id}"
 echo "${nexus_server}/repository/${nexus_repo}/${artifact_id}/maven-metadata.xml"
 
