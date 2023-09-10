@@ -1,7 +1,7 @@
 major_version=$1
 nexus_server=$2
 nexus_repo=$3
-artifact_id=$4
+artifact_id=$(echo $4 | sed 's/\./\//g')
 echo "${nexus_server}/repository/${nexus_repo}/${artifact_id}/maven-metadata.xml"
 
 last_build_number=$(wget -q -O- "${nexus_server}/repository/${nexus_repo}/${artifact_id}/maven-metadata.xml" | grep -i '</version>' | grep -i ${major_version} | cut -d'-' -f2 | cut -d'<' -f1 | sort -n | tail -n 1 | tr '\n' ' ')
