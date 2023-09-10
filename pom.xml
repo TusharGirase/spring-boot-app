@@ -38,7 +38,7 @@
 			<properties>
 				<repo-id>snapshot-repo</repo-id>
 				<repo-name>Snapshot repo</repo-name>
-				<repo-url>${nexus.server}/repository/maven-snapshots</repo-url>
+				<repo-url>${nexus.server}/repository/abcl-snapshots</repo-url>
 			</properties>
 		</profile>
 		<profile>
